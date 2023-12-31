@@ -6,7 +6,7 @@ import { NavLink } from './nav-link'
 
 export function Sidebar() {
   return (
-    <aside className="bg-violet-700 w-[16.875rem] flex flex-col items-center p-4">
+    <aside className="hidden bg-violet-700 w-[16.875rem] fixed top-0 left-0 h-screen lg:flex flex-col items-center p-4">
       <Link href="/home">
         <Image src="/logo-white.svg" alt="" width={154} height={30} />
       </Link>
@@ -15,7 +15,7 @@ export function Sidebar() {
         <div className="space-y-2">
           <h2 className="ml-4 text-muted text-lg font-semibold">Explorar</h2>
 
-          <ul className="space-y-2">
+          <ul>
             <li>
               <NavLink href="/home">
                 <PlayCircle className="h-5 w-5" />
@@ -42,7 +42,7 @@ export function Sidebar() {
         <div className="space-y-2">
           <h2 className="ml-4 text-muted text-lg font-semibold">Playlists</h2>
 
-          <ScrollArea className="space-y-2 pb-3 h-56 w-full">
+          <ScrollArea className="pb-3 h-56 w-full">
             <NavLink href={`/playlists/123`}>
               <ListMusic className="h-5 w-5" />
               <span>Back-end</span>

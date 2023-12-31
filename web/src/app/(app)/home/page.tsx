@@ -14,7 +14,7 @@ import { TopEpisodeCard } from './components/top-episode-card'
 
 export default function Home() {
   return (
-    <section className="space-y-6 p-6">
+    <section className="space-y-6 p-6 pb-20">
       <div className="space-y-1">
         <h1 className="text-2xl text-zinc-800 font-semibold tracking-tight">
           Top episódios
