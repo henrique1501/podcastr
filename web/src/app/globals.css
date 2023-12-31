@@ -78,3 +78,8 @@
 .home-height {
   height: calc(100vh - 4rem);
 }
+
+.bg-blur {
+  background: radial-gradient(1819.83% 163.73% at -4.5% -18%, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(8px);
+}
