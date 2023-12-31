@@ -4,7 +4,7 @@ import { ExternalLink, User2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Home() {
+export default function App() {
   return (
     <>
       <header className="h-16 border-b border-zinc-100 px-4 flex items-center">
@@ -59,7 +59,11 @@ export default function Home() {
                   <AvatarFallback>
                     <User2 />
                   </AvatarFallback>
-                  <AvatarImage src="/avatars/instant.jpeg" alt="instant" />
+                  <AvatarImage
+                    src="/avatars/instant.jpeg"
+                    alt="instant"
+                    className="object-cover"
+                  />
                 </Avatar>
               ))}
             </div>
