@@ -1,3 +1,4 @@
+import { EpisodeCard } from './components/episode-card'
 import { TopEpisodeCard } from './components/top-episode-card'
 
 export default function Home() {
@@ -16,6 +17,12 @@ export default function Home() {
         <TopEpisodeCard />
         <TopEpisodeCard />
         <TopEpisodeCard />
+      </div>
+
+      <div className="mt-6 flex gap-6">
+        <EpisodeCard />
+        <EpisodeCard />
+        <EpisodeCard />
       </div>
 
       {/* <div className="mt-10">
