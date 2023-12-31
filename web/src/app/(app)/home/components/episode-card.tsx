@@ -3,7 +3,7 @@ import { EpisodePlayButton } from './episode-play-button'
 
 export function EpisodeCard() {
   return (
-    <div className="relative space-y-3">
+    <div className="relative space-y-3 w-[175px]">
       <Image
         src="/podcast-1.png"
         alt="podcast-1"
