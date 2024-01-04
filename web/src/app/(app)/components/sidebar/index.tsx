@@ -1,7 +1,8 @@
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Heart, ListMusic, PlayCircle, Plus, Search } from 'lucide-react'
+import { Heart, ListMusic, PlayCircle, Search } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { AddPlaylistDialog } from './add-playlist-dialog'
 import { NavLink } from './nav-link'
 
 export function Sidebar() {
@@ -11,7 +12,7 @@ export function Sidebar() {
         <Image src="/logo-white.svg" alt="" width={154} height={30} />
       </Link>
 
-      <div className="space-y-6 w-full mt-14">
+      <div className="space-y-6 w-full mt-10">
         <div className="space-y-2">
           <h2 className="ml-4 text-muted text-lg font-semibold">Explorar</h2>
 
@@ -79,10 +80,7 @@ export function Sidebar() {
             </NavLink>
           </ScrollArea>
 
-          <button className="w-full justify-start inline-flex gap-2 items-center h-9 opacity-50 rounded-md px-4 text-sm font-medium text-muted transition-colors bg-transparent hover:bg-violet-800 hover:opacity-100 data-[active=true]:bg-violet-800">
-            <Plus className="h-5 w-5" />
-            <span>Adicionar Playlist</span>
-          </button>
+          <AddPlaylistDialog />
         </div>
       </div>
     </aside>
