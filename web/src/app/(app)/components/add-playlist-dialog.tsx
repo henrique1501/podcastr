@@ -20,7 +20,8 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Loader2, Plus, UploadCloud } from 'lucide-react'
+import { Loader2, UploadCloud } from 'lucide-react'
+import { ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 
@@ -36,7 +37,11 @@ const addPlaylistFormSchema = z.object({
 
 type AddPlaylistFormValues = z.infer<typeof addPlaylistFormSchema>
 
-export function AddPlaylistDialog() {
+interface AddPlaylistDialogProps {
+  children: ReactNode
+}
+
+export function AddPlaylistDialog({ children }: AddPlaylistDialogProps) {
   const form = useForm<AddPlaylistFormValues>({
     resolver: zodResolver(addPlaylistFormSchema),
   })
@@ -56,12 +61,7 @@ export function AddPlaylistDialog() {
 
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <button className="w-full justify-start inline-flex gap-2 items-center h-9 opacity-50 rounded-md px-4 text-sm font-medium text-muted transition-colors bg-transparent hover:bg-violet-800 hover:opacity-100 data-[active=true]:bg-violet-800">
-          <Plus className="h-5 w-5" />
-          <span>Criar Playlist</span>
-        </button>
-      </DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Crie uma nova playlist</DialogTitle>

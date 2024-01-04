@@ -8,20 +8,32 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
-import { ChevronDown, Play } from 'lucide-react'
+import { Slider } from '@/components/ui/slider'
+import {
+  ChevronDown,
+  ChevronUp,
+  Heart,
+  ListMusic,
+  Play,
+  Repeat,
+  Shuffle,
+  SkipBack,
+  SkipForward,
+} from 'lucide-react'
 import Image from 'next/image'
 import { PlayButton } from '../../home/components/play-button'
+import { AddPlaylistDialog } from '../add-playlist-dialog'
 
 export function MobilePlayer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <PlayButton>
-          <Play />
-        </PlayButton>
+        <Button className="h-10 w-10 rounded-full p-0 bg-violet-700 hover:bg-violet-700/80 shadow-sm">
+          <ChevronUp className="h-5 w-5" />
+        </Button>
       </DrawerTrigger>
 
-      <DrawerContent className="h-[90%] px-6">
+      <DrawerContent className="h-fit px-6 pb-6">
         <DrawerHeader>
           <DrawerTitle>Tocando agora</DrawerTitle>
         </DrawerHeader>
@@ -32,26 +44,72 @@ export function MobilePlayer() {
           </Button>
         </DrawerClose>
 
-        <div className="mt-6 flex flex-col items-center gap-6">
+        <div className="mt-6 w-[348px] mx-auto flex flex-col items-center gap-6">
           <Image
             src="/podcast-1.png"
             alt="podcast-1"
             width={960}
             height={960}
-            className="h-96 w-[348px] rounded-xl object-cover shadow-lg"
+            className="h-96 w-full rounded-xl object-cover shadow-lg"
           />
 
           <div className="space-y-1 text-center">
-            <h3 title="A vida é boa" className="font-medium leading-none">
+            <h3
+              title="A vida é boa"
+              className="font-medium leading-none text-xl"
+            >
               A vida é boa
             </h3>
             <p title="Diego e Richard" className="text-muted-foreground">
               Diego e Richard
             </p>
           </div>
+
+          <div className="w-full flex items-center justify-between">
+            <button className="group">
+              <Heart className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700 group-hover:fill-violet-400" />
+            </button>
+
+            <AddPlaylistDialog>
+              <button className="group">
+                <ListMusic className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700 group-hover:fill-violet-400" />
+              </button>
+            </AddPlaylistDialog>
+          </div>
+
+          <div className="space-y-2 w-full">
+            <Slider />
+
+            <div className="flex items-center justify-between">
+              <span className="block text-sm text-muted-foreground">12:56</span>
+              <span className="block text-sm text-muted-foreground">36:41</span>
+            </div>
+          </div>
         </div>
 
-        <DrawerFooter></DrawerFooter>
+        <DrawerFooter className="flex flex-row items-center justify-between">
+          <button className="group">
+            <Repeat className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700" />
+          </button>
+
+          <div className="flex items-center gap-4">
+            <button className="group">
+              <SkipBack className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700 group-hover:fill-violet-400" />
+            </button>
+
+            <PlayButton className="h-20 w-20">
+              <Play className="h-8 w-8 stroke-muted fill-muted ml-[2px]" />
+            </PlayButton>
+
+            <button className="group">
+              <SkipForward className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700 group-hover:fill-violet-400" />
+            </button>
+          </div>
+
+          <button className="group">
+            <Shuffle className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700" />
+          </button>
+        </DrawerFooter>
       </DrawerContent>
     </Drawer>
   )

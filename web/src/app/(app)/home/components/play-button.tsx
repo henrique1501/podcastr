@@ -9,7 +9,8 @@ const playButtonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-violet-700 hover:bg-violet-700/80',
+        default:
+          'bg-violet-700 hover:bg-violet-700/80 disabled:hover:bg-violet-700',
         outline:
           'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
       },
