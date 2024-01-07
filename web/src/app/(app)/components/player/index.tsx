@@ -13,12 +13,14 @@ import {
 // import Image from 'next/image'
 import Image from 'next/image'
 import { PlayButton } from '../../home/components/play-button'
+import { SelectPlayListDialog } from '../select-playlist-dialog'
+import { PlayerContainer } from './container'
 
 export function Player() {
   const disabled = false
 
   return (
-    <div className="hidden px-16 py-2 fixed left-0 bottom-0 right-0 lg:flex items-center justify-between backdrop-blur-md bg-white bg-opacity-50 border-t-[1.5px] border-gradient-to-l from-violet-700 to-violet-700">
+    <PlayerContainer>
       <div className="flex items-center gap-4">
         {disabled ? (
           <>
@@ -40,7 +42,7 @@ export function Player() {
             />
 
             <div className="space-y-1 w-28">
-              <h3 className="text-sm text-zinc-800 font-semibold">
+              <h3 className="text-sm text-zinc-800 dark:text-white font-semibold">
                 Diego e Richard
               </h3>
 
@@ -59,9 +61,11 @@ export function Player() {
               <Heart className="h-5 w-5 stroke-muted-foreground group-disabled:group-hover:stroke-muted-foreground group-disabled:group-hover:fill-none group-hover:stroke-violet-700 group-hover:fill-violet-400" />
             </button>
 
-            <button disabled={disabled} className="group disabled:opacity-50">
-              <ListMusic className="h-5 w-5 stroke-muted-foreground group-disabled:group-hover:stroke-muted-foreground group-disabled:group-hover:fill-none group-hover:stroke-violet-700 group-hover:fill-violet-400" />
-            </button>
+            <SelectPlayListDialog episodeId={'1234'}>
+              <button disabled={disabled} className="group disabled:opacity-50">
+                <ListMusic className="h-5 w-5 stroke-muted-foreground group-disabled:group-hover:stroke-muted-foreground group-disabled:group-hover:fill-none group-hover:stroke-violet-700 group-hover:fill-violet-400" />
+              </button>
+            </SelectPlayListDialog>
           </div>
 
           <div className="flex items-center gap-4">
@@ -70,7 +74,7 @@ export function Player() {
             </button>
 
             <PlayButton disabled={disabled}>
-              <Play className="h-5 w-5 stroke-muted fill-muted ml-[2px]" />
+              <Play className="h-5 w-5 stroke-zinc-200 fill-zinc-200 ml-[2px]" />
             </PlayButton>
 
             <button disabled={disabled} className="group disabled:opacity-50">
@@ -98,10 +102,9 @@ export function Player() {
           </span>
 
           <Slider
-            defaultValue={[33]}
+            defaultValue={[0]}
             max={100}
             step={1}
-            value={disabled ? [0] : [33]}
             data-disabled={disabled}
           />
 
@@ -120,13 +123,12 @@ export function Player() {
           className="stroke-muted-foreground data-[disabled=true]:opacity-50"
         />
         <Slider
-          defaultValue={[25]}
+          defaultValue={[0]}
           max={100}
           step={1}
-          value={disabled ? [0] : [33]}
           data-disabled={disabled}
         />
       </div>
-    </div>
+    </PlayerContainer>
   )
 }

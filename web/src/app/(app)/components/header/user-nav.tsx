@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
   DropdownMenu,
@@ -9,9 +11,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Switch } from '@/components/ui/switch'
-import { Sun, User2 } from 'lucide-react'
+import { Moon, Sun, User2 } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
 export function UserNav() {
+  const { theme, setTheme } = useTheme()
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -48,9 +53,17 @@ export function UserNav() {
             </div>
 
             <div className="flex items-center justify-between">
-              <Switch />
+              {theme === 'light' ? (
+                <Switch onCheckedChange={() => setTheme('dark')} />
+              ) : (
+                <Switch checked onCheckedChange={() => setTheme('light')} />
+              )}
 
-              <Sun className="h-5 w-5 stroke-zinc-800" />
+              {theme === 'light' ? (
+                <Sun className="h-5 w-5 stroke-zinc-800" />
+              ) : (
+                <Moon className="h-5 w-5 stroke-primary" />
+              )}
             </div>
           </div>
         </DropdownMenuLabel>

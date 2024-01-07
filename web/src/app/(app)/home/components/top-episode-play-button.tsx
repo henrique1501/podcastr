@@ -13,7 +13,7 @@ export function TopEpisodePlayButton() {
 
   return (
     <PlayButton onClick={handlePlay}>
-      <Play className="h-4 w-4 stroke-muted fill-muted ml-[1px]" />
+      <Play className="h-4 w-4 stroke-zinc-200 fill-zinc-200 ml-[2px]" />
     </PlayButton>
   )
 }

@@ -7,17 +7,20 @@ import Link from 'next/link'
 export default function App() {
   return (
     <>
-      <header className="h-16 border-b border-zinc-100 px-4 flex items-center">
+      <header className="h-16 border-b border-zinc-100 dark:border-zinc-900 px-4 flex items-center">
         <div className="max-w-6xl w-full mx-auto flex items-center justify-between">
           <Image src="/logo.svg" alt="" width={154} height={30} />
 
           <div className="flex items-center gap-4">
-            <Button asChild className="rounded-full">
+            <Button
+              asChild
+              className="rounded-full dark:bg-zinc-900 dark:hover:bg-zinc-900/80 dark:text-zinc-200"
+            >
               <Link href="/sign-in">Entrar</Link>
             </Button>
             <Button
               asChild
-              className="rounded-full bg-violet-700 hover:bg-violet-700/80"
+              className="rounded-full bg-violet-700 hover:bg-violet-700/80 dark:text-zinc-200"
             >
               <Link href="/sign-up">Criar conta</Link>
             </Button>
@@ -29,7 +32,7 @@ export default function App() {
         <section className="relative home-height flex flex-col items-center justify-center gap-4 px-4">
           <Button
             asChild
-            className="bg-violet-200 rounded-full text-violet-700 gap-1 hover:bg-violet-200/80"
+            className="bg-violet-200 rounded-full text-violet-700 dark:text-muted-foreground dark:bg-zinc-900 dark:hover:bg-zinc-900/80 gap-1 hover:bg-violet-200/80"
           >
             <a
               href="https://www.github.com/henrique998/podcastr"
@@ -40,7 +43,7 @@ export default function App() {
             </a>
           </Button>
 
-          <h1 className="text-3xl lg:text-6xl text-zinc-800 text-center max-w-[900px] w-full font-bold">
+          <h1 className="text-3xl lg:text-6xl text-zinc-800 dark:text-zinc-200 text-center max-w-[900px] w-full font-bold">
             Ouça agora mesmo os melhores{' '}
             <span className="text-violet-700">podcasts</span> sobre o universo
             da programação

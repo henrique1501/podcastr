@@ -22,7 +22,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import { PlayButton } from '../../home/components/play-button'
-import { AddPlaylistDialog } from '../add-playlist-dialog'
+import { SelectPlayListDialog } from '../select-playlist-dialog'
 
 export function MobilePlayer() {
   return (
@@ -70,11 +70,11 @@ export function MobilePlayer() {
               <Heart className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700 group-hover:fill-violet-400" />
             </button>
 
-            <AddPlaylistDialog>
+            <SelectPlayListDialog episodeId="1212">
               <button className="group">
                 <ListMusic className="h-8 w-8 stroke-muted-foreground group-hover:stroke-violet-700 group-hover:fill-violet-400" />
               </button>
-            </AddPlaylistDialog>
+            </SelectPlayListDialog>
           </div>
 
           <div className="space-y-2 w-full">
@@ -98,7 +98,7 @@ export function MobilePlayer() {
             </button>
 
             <PlayButton className="h-20 w-20">
-              <Play className="h-8 w-8 stroke-muted fill-muted ml-[2px]" />
+              <Play className="h-8 w-8 stroke-zinc-200 fill-zinc-200 ml-[2px]" />
             </PlayButton>
 
             <button className="group">

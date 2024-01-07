@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { TopEpisodeContainer } from './top-episode-container'
 import { TopEpisodePlayButton } from './top-episode-play-button'
 
 export function TopEpisodeCard() {
@@ -16,7 +17,7 @@ export function TopEpisodeCard() {
         className="w-full h-full object-cover"
       />
 
-      <div className="absolute left-0 bottom-0 right-0 py-3 px-4 backdrop-blur-md bg-white bg-opacity-50 flex items-center justify-between">
+      <TopEpisodeContainer>
         <div>
           <h3>O que é um bom codigo?</h3>
 
@@ -32,7 +33,7 @@ export function TopEpisodeCard() {
         </div>
 
         <TopEpisodePlayButton />
-      </div>
+      </TopEpisodeContainer>
     </Link>
   )
 }

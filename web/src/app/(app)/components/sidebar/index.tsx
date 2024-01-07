@@ -7,14 +7,16 @@ import { NavLink } from './nav-link'
 
 export function Sidebar() {
   return (
-    <aside className="hidden bg-violet-700 w-[16.875rem] fixed top-0 left-0 h-screen lg:flex flex-col items-center p-4">
+    <aside className="hidden bg-violet-700 dark:bg-background border-r border-transparent dark:border-zinc-800 w-[16.875rem] fixed top-0 left-0 h-screen lg:flex flex-col items-center p-4">
       <Link href="/home">
         <Image src="/logo-white.svg" alt="" width={154} height={30} />
       </Link>
 
       <div className="space-y-6 w-full mt-10">
         <div className="space-y-2">
-          <h2 className="ml-4 text-muted text-lg font-semibold">Explorar</h2>
+          <h2 className="ml-4 text-muted dark:text-white text-lg font-semibold">
+            Explorar
+          </h2>
 
           <ul>
             <li>
@@ -41,7 +43,9 @@ export function Sidebar() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="ml-4 text-muted text-lg font-semibold">Playlists</h2>
+          <h2 className="ml-4 text-muted dark:text-white text-lg font-semibold">
+            Playlists
+          </h2>
 
           <ScrollArea className="pb-3 h-56 w-full">
             <NavLink href={`/playlists/123`}>
@@ -81,7 +85,7 @@ export function Sidebar() {
           </ScrollArea>
 
           <AddPlaylistDialog>
-            <button className="w-full justify-start inline-flex gap-2 items-center h-9 opacity-50 rounded-md px-4 text-sm font-medium text-muted transition-colors bg-transparent hover:bg-violet-800 hover:opacity-100 data-[active=true]:bg-violet-800">
+            <button className="w-full justify-start inline-flex gap-2 items-center h-9 opacity-50 rounded-md px-4 text-sm font-medium text-muted dark:text-zinc-200 transition-colors bg-transparent hover:bg-violet-800 hover:opacity-100 data-[active=true]:bg-violet-800 dark:hover:bg-zinc-900 dark:data-[active=true]:bg-zinc-800">
               <Plus className="h-5 w-5" />
               <span>Criar Playlist</span>
             </button>
