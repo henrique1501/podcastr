@@ -16,7 +16,7 @@ import { TopEpisodesCarousel } from './components/top-episodes-carousel'
 
 export default function Home() {
   return (
-    <section className="space-y-6 p-6 pb-20 bg-background">
+    <section className="space-y-6 p-6 pb-20">
       <div className="space-y-1">
         <h1 className="text-2xl text-zinc-800 dark:text-white font-semibold tracking-tight">
           Top episódios
