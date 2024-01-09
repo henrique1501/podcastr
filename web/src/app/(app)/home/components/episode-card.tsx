@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { EpisodePlayButton } from './episode-play-button'
 
 export function EpisodeCard() {
   return (
-    <div className="relative space-y-3 w-[175px]">
+    <Link href={`/episodes/123`} className="relative space-y-3 w-[175px]">
       <Image
         src="/podcast-1.png"
         alt="podcast-1"
@@ -30,6 +31,6 @@ export function EpisodeCard() {
           <span className="block">8 Jan, 2021</span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

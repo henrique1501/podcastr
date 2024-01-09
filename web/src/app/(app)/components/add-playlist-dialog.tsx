@@ -19,8 +19,9 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Loader2, UploadCloud } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
@@ -29,10 +30,9 @@ const addPlaylistFormSchema = z.object({
   name: z.string().min(3, {
     message: 'O nome da playlist deve conter pelo menos 3 caracteres.',
   }),
-  image: z
-    .instanceof(FileList)
-    .transform((list) => list[0])
-    .optional(),
+  description: z.string().min(1, {
+    message: 'A descrição da playlist é obrigatória.',
+  }),
 })
 
 type AddPlaylistFormValues = z.infer<typeof addPlaylistFormSchema>
@@ -74,7 +74,7 @@ export function AddPlaylistDialog({ children }: AddPlaylistDialogProps) {
         <Form {...form}>
           <form
             onSubmit={handleSubmit(handleCreatePlaylist)}
-            className="space-y-6"
+            className="space-y-4"
           >
             <FormField
               control={form.control}
@@ -99,43 +99,19 @@ export function AddPlaylistDialog({ children }: AddPlaylistDialogProps) {
 
             <FormField
               control={form.control}
-              name="image"
+              name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Banner (opcional)</FormLabel>
+                  <FormLabel>Descrição</FormLabel>
                   <FormControl>
-                    <label
-                      data-disabled={isSubmitting}
-                      className="h-24 rounded-md border flex flex-col items-center justify-center gap-2 text-muted-foreground data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50"
-                    >
-                      <UploadCloud />
-
-                      <input
-                        type="file"
-                        onChange={(e) => field.onChange(e.target.files)}
-                        className="sr-only inset-0"
-                      />
-
-                      <div className="text-center">
-                        <span>Escolha uma imagem</span>
-                        <p className="text-sm">
-                          formatos permitidos: png, jpg, jpeg
-                        </p>
-                      </div>
-                    </label>
+                    <Textarea
+                      {...field}
+                      placeholder="descrição da minha playlist"
+                    />
                   </FormControl>
-                  <div
-                    data-disabled={isSubmitting}
-                    className="flex items-start justify-between data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-50"
-                  >
-                    <FormDescription>
-                      O tamanho máximo permitido é 4mb.
-                    </FormDescription>
-
-                    <span className="text-sm text-muted-foreground">
-                      Selecionados: {field.value ? 1 : 0}
-                    </span>
-                  </div>
+                  <FormDescription>
+                    Adicione uma descrição a sua playlist.
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}

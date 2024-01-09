@@ -41,37 +41,37 @@ export function Sidebar() {
           </h2>
 
           <ScrollArea className="pb-3 h-56 w-full">
-            <NavLink href={`/playlists/123`}>
+            <NavLink href={`/playlists/1`}>
               <ListMusic className="h-5 w-5" />
               <span>Back-end</span>
             </NavLink>
 
-            <NavLink href={`/playlists/123`}>
+            <NavLink href={`/playlists/2`}>
               <ListMusic className="h-5 w-5" />
               <span>Front-end</span>
             </NavLink>
 
-            <NavLink href={`/playlists/123`}>
+            <NavLink href={`/playlists/3`}>
               <ListMusic className="h-5 w-5" />
               <span>Node.js</span>
             </NavLink>
 
-            <NavLink href={`/playlists/123`}>
+            <NavLink href={`/playlists/4`}>
               <ListMusic className="h-5 w-5" />
               <span>SveltKit</span>
             </NavLink>
 
-            <NavLink href={`/playlists/123`}>
+            <NavLink href={`/playlists/5`}>
               <ListMusic className="h-5 w-5" />
               <span>Next.js</span>
             </NavLink>
 
-            <NavLink href={`/playlists/123`}>
+            <NavLink href={`/playlists/6`}>
               <ListMusic className="h-5 w-5" />
               <span>PHP</span>
             </NavLink>
 
-            <NavLink href={`/playlists/123`}>
+            <NavLink href={`/playlists/7`}>
               <ListMusic className="h-5 w-5" />
               <span>Golang</span>
             </NavLink>

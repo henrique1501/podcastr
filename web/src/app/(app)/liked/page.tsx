@@ -4,7 +4,7 @@ export default function Search() {
   return (
     <section className="space-y-6 p-6 pb-20">
       <div className="space-y-1">
-        <h1 className="text-3xl text-zinc-800 dark:text-white font-semibold tracking-tight lg:leading-[1.1]">
+        <h1 className="text-2xl text-zinc-800 dark:text-white font-semibold tracking-tight lg:leading-[1.1]">
           Episódios curtidos por você
         </h1>
         <p className="text-sm text-muted-foreground">
