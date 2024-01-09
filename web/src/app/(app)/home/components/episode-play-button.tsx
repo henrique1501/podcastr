@@ -16,7 +16,7 @@ export function EpisodePlayButton() {
       onClick={handlePlay}
       className="hover:bg-violet-700 hover:brightness-90"
     >
-      <Play className="h-4 w-4 stroke-muted fill-muted ml-[1px]" />
+      <Play className="h-4 w-4 stroke-muted fill-muted ml-[1px] dark:stroke-white dark:fill-white" />
     </PlayButton>
   )
 }

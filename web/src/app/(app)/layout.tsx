@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { Header } from './components/header'
+import { MobileMenu } from './components/mobile-menu'
 import { MobilePlayer } from './components/mobile-player'
 import { Player } from './components/player'
 import { Sidebar } from './components/sidebar'
@@ -16,9 +17,11 @@ export default function AppLayout({ children }: { children: ReactNode }) {
 
       <Player />
 
-      <div className="fixed right-4 bottom-4 lg:hidden">
+      <div className="fixed right-4 bottom-20 lg:hidden">
         <MobilePlayer />
       </div>
+
+      <MobileMenu />
     </div>
   )
 }
